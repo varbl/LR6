@@ -1,0 +1,14 @@
+﻿@model LR6.Models.User
+@{
+    Layout = null;
+}
+
+<h3>Order Confirmation</h3>
+<p>Your order has been confirmed.</p>
+<p>Details of your order:</p>
+<ul>
+    @foreach (var product in ViewBag.Products)
+    {
+        <li>@product.Name - $@product.Price</li>
+    }
+</ul>

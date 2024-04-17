@@ -1,0 +1,28 @@
+﻿@model LR6.Models.User
+@{
+    Layout = null;
+}
+
+<h3>Order Form</h3>
+<form method="post" action="/PizzaOrder/ConfirmOrder">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="Name" />
+    <input type="hidden" asp-for="Age" />
+
+    @if (ViewBag.ShowOrderQuantityField)
+    {
+        <label>Quantity:</label>
+        <input type="number" name="Quantity" />
+
+        <br />
+    }
+
+    <label>Product 1:</label>
+    <input type="text" name="products[0].Name" /><br />
+    <label>Product 2:</label>
+    <input type="text" name="products[1].Name" /><br />
+
+    <!-- Add more product fields if needed -->
+
+    <input type="submit" value="Confirm Order" />
+</form>
